@@ -1,8 +1,12 @@
+import Controller.LoginController;
 import Controller.RegisterController;
 import Model.InputValidator;
 import Model.NotANumberException;
+import Model.User;
 import View.ViewMenu;
 import View.ViewRegistration;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -12,9 +16,12 @@ public class Main {
     }
 
     public static void main(String[] args) {
+
         InputValidator validator = new InputValidator();
         new ViewRegistration();
         RegisterController registerController = new RegisterController(Main.scanner);
+        LoginController loginController = new LoginController(Main.scanner);
+
         ViewMenu menu = new ViewMenu();
         Scanner scanner = new Scanner(System.in);
         boolean salir = false;
@@ -22,7 +29,6 @@ public class Main {
         while(!salir) {
             menu.FirstMenu();
             String userInput = scanner.next();
-
 
             int opcion;
             try {
@@ -38,18 +44,31 @@ public class Main {
                     registerController.registerUser();
                     break;
                 case 2:
-                    System.out.println("Not implemented yet");
-                default:
-                    salir = true;
+                    loginController.login();
+                    salir = true; // Agrega esta línea para salir del bucle while
+                    break;
+                case 3:
                     System.out.println("Closing app, Thank You");
+                    salir = true; // Agrega esta línea para salir del bucle while
             }
 
             scanner.nextLine();
         }
 
+        // To use when I have to need to get the list of RegisteredUsers
+
+        /*List<User> registeredUsers =  registerController.getRegisteredUsers();
+        for(User user : registeredUsers) {
+            System.out.println(user);
+        }*/
+
+
     }
+
 
     static {
         scanner = new Scanner(System.in);
     }
+
+
 }

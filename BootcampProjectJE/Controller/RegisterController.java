@@ -4,13 +4,18 @@ package Controller;
 import Model.InputValidator;
 import Model.NotAWordException;
 import Model.User;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class RegisterController {
     private Scanner scanner;
+    private static ArrayList<User> users;
 
     public RegisterController(Scanner scanner) {
         this.scanner = scanner;
+        this.users = new ArrayList<User>();
     }
 
     public void registerUser() {
@@ -56,7 +61,8 @@ public class RegisterController {
             }
 
             String username = this.generateRandomUsername(name);
-            new User(name, email, password, username);
+            User newUser = new User(name, email, password, username);
+            users.add(newUser);
             System.out.println("Registration successful! Your username is: " + username);
             return;
         }
@@ -68,6 +74,9 @@ public class RegisterController {
         int randomNum = (int)(Math.random() * 1000.0);
         username = username + randomNum;
         return username;
+    }
+    public  List<User> getRegisteredUsers() {
+        return users;
     }
 }
 
