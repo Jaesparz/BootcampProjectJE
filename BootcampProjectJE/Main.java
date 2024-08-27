@@ -45,11 +45,11 @@ public class Main {
                     break;
                 case 2:
                     loginController.login();
-                    salir = true; // Agrega esta línea para salir del bucle while
+                    salir = true;
                     break;
                 case 3:
                     System.out.println("Closing app, Thank You");
-                    salir = true; // Agrega esta línea para salir del bucle while
+                    salir = true;
             }
 
             scanner.nextLine();

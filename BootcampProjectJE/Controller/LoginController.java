@@ -1,8 +1,10 @@
 package Controller;
 
 import Model.InputValidator;
+import Model.NotANumberException;
 import Model.NotAWordException;
 import Model.User;
+import View.LoginMenuView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +47,53 @@ public class LoginController {
                     if (user.getPassword().equals(password)) {
                         System.out.println("Login successful!");
 
-                        comprador.holamundo();
+                        LoginMenuView loginMenuView = new LoginMenuView();
+                        Scanner scanner = new Scanner(System.in);
+                        DepositMoneyController depositMoneyController = new DepositMoneyController(scanner);
+                        ControllerCheckWallet controllerCheckWallet = new ControllerCheckWallet();
+                        boolean salir = false;
+
+                        while(!salir) {
+                            loginMenuView.loginMenuView();
+                            String userInput = scanner.next();
+
+                            int opcion;
+                            try {
+                                InputValidator.validateNumberInput(userInput);
+                                opcion = Integer.parseInt(userInput);
+                            } catch (NotANumberException var10) {
+                                System.out.println("Error: You have to Enter a Number. Try Again.\n");
+                                continue;
+                            }
+
+                            switch (opcion) {
+                                case 1:
+                                    depositMoneyController.save();
+
+                                    break;
+                                case 2:
+                                    controllerCheckWallet.checkWallet();
+
+
+                                    break;
+                                case 3:
+                                    System.out.println("Not Implemented yet");
+                                    break;
+                                case 4:
+                                    System.out.println("Not Implemented yet");
+                                    break;
+                                case 5:
+                                    System.out.println("Not Implemented yet");
+                                    break;
+                                case 6:
+                                    System.out.println("Not Implemented yet");
+
+
+                            }
+
+                            scanner.nextLine();
+                            continue;
+                        }
                         return;
                     } else {
                         System.out.println("ERROR");
