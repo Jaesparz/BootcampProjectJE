@@ -49,6 +49,7 @@ public class LoginController {
                         DepositMoneyController depositMoneyController = new DepositMoneyController(scanner);
                         ControllerCheckWallet controllerCheckWallet = new ControllerCheckWallet();
                         PurchaseController purchaseController = new PurchaseController(scanner);
+                        SalesController salesController = new SalesController(scanner);
 
                         boolean salir = false;
 
@@ -79,7 +80,7 @@ public class LoginController {
 
                                     break;
                                 case 4:
-                                    System.out.println("Not Implemented yet");
+                                    salesController.placeSellOrder();
 
                                     break;
                                 case 5:

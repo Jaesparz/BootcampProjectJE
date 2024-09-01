@@ -72,6 +72,14 @@ public class PurchaseController {
 
                         if (sellOrder.getAmount().equals(amount) && thisBitcoinPriceinUsd.compareTo(maxPrice) <= 0) {
 
+
+                            System.out.println("\nSearching for a Seller...........\n");
+                            try{
+                                Thread.sleep(5000);
+                            }catch(Exception e){
+                                e.printStackTrace();
+                            }
+
                             System.out.println(sellOrder.getSellerName() + " is offering " + sellOrder.getAmount() + " for " + sellOrder.getTotalPrice());
                             System.out.println("Do you confirm the purchase?  (YES/NO): ");
                             String yesNo = scanner.nextLine();
@@ -144,6 +152,13 @@ public class PurchaseController {
                     for (SellOrder sellOrder : sellOrdersE) {
 
                         if (sellOrder.getAmount().equals(amountE) && thisEthereumPriceinUsd.compareTo(maxPrice) <= 0) {
+
+                            System.out.println("\nSearching for a Seller...........\n");
+                            try{
+                                Thread.sleep(5000);
+                            }catch(Exception e){
+                                e.printStackTrace();
+                            }
 
                             System.out.println(sellOrder.getSellerName() + " is offering " + sellOrder.getAmount() + " for " + sellOrder.getTotalPrice());
                             System.out.println("Do you confirm the purchase?  (YES/NO): ");

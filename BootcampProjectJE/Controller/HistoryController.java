@@ -1,19 +1,20 @@
 package Controller;
 
+import Model.BuyOrder;
 import Model.SellOrder;
 
 import java.util.ArrayList;
 
 public class HistoryController {
 
-    private static ArrayList<SellOrder> ventasHechas = new ArrayList<>();
+    private static ArrayList<BuyOrder> ventasHechas = new ArrayList<>();
     private static ArrayList<SellOrder> comprasHechas = new ArrayList<>();
 
     public HistoryController(){
 
     }
 
-    public static ArrayList<SellOrder> getVentasHechas() {
+    public static ArrayList<BuyOrder> getVentasHechas() {
         return ventasHechas;
     }
 
@@ -21,7 +22,7 @@ public class HistoryController {
         return comprasHechas;
     }
 
-    public static void setVentasHechas(SellOrder ventaHecha) {
+    public static void setVentasHechas(BuyOrder ventaHecha) {
         ventasHechas.add(ventaHecha);
     }
 

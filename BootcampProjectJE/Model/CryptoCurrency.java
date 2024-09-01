@@ -2,7 +2,7 @@ package Model;
 
 import java.math.BigDecimal;
 
-public class CryptoCurrency {
+public abstract class CryptoCurrency {
     protected String name;
     protected static BigDecimal amount;
 
