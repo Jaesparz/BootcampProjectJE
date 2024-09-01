@@ -5,7 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ed24766-73f7-492c-b8c2-ccb7fae65431" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Controller/HistoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controller/PlaceBuyOrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controller/PlaceSellOrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controller/PurchaseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controller/SalesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Files/SellOrdersBitcoin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Files/SellOrdersEthereum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/BuyOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/Exchanger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/OrderBook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/SellOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Comprador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/ControllerCheckWallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/ControllerCheckWallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/DepositMoneyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/DepositMoneyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Bitcoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Bitcoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/CryptoCurrency.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/CryptoCurrency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Ethereum.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Ethereum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/FiatMoney.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/FiatMoney.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Wallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/LoginMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/LoginMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/ViewMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/ViewMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/Controller/Comprador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/Controller/ControllerCheckWallet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Controller/ControllerCheckWallet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/Controller/DepositMoneyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Controller/DepositMoneyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/Controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/Model/Bitcoin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Model/Bitcoin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/Model/CryptoCurrency.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Model/CryptoCurrency.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/Model/Ethereum.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Model/Ethereum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/Model/FiatMoney.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Model/FiatMoney.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/Model/Wallet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Model/Wallet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/View/LoginMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/View/LoginMenuView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/View/ViewMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/View/ViewMenu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +51,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -39,6 +76,9 @@
     &quot;accountId&quot;: &quot;256151e7-3beb-4d56-a80f-94a8352bcd39&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -50,10 +90,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Bitcoin.executor": "Run",
+    "Application.Ethereum.executor": "Run",
     "Application.Main (1).executor": "Run",
     "Application.Main.executor": "Run",
+    "Application.OrderBook.executor": "Run",
+    "Application.SellersAndPurchasersLogic.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "#3 on Implement__Wallet",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -65,6 +109,32 @@
   }
 }]]></component>
   <component name="RunManager" selected="Application.Main (1)">
+    <configuration name="Bitcoin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Model.Bitcoin" />
+      <module name="src" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ethereum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Model.Ethereum" />
+      <module name="src" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="src" />
@@ -72,12 +142,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="globant.main.Main" />
+    <configuration name="OrderBook" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Model.OrderBook" />
       <module name="src" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="globant.main.*" />
+          <option name="PATTERN" value="Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SellersAndPurchasersLogic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Controller.SellersAndPurchasersLogic" />
+      <module name="src" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -88,9 +171,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.OrderBook" />
+        <item itemvalue="Application.Bitcoin" />
+        <item itemvalue="Application.Ethereum" />
+        <item itemvalue="Application.SellersAndPurchasersLogic" />
       </list>
     </recent_temporary>
   </component>
@@ -112,6 +196,9 @@
       <updated>1724725001834</updated>
       <workItem from="1724725004219" duration="800000" />
       <workItem from="1724728715488" duration="9744000" />
+      <workItem from="1724808983517" duration="20493000" />
+      <workItem from="1724884392590" duration="353000" />
+      <workItem from="1725108630492" duration="22897000" />
     </task>
     <servers />
   </component>
@@ -130,6 +217,11 @@
           <url>file://$PROJECT_DIR$/Controller/LoginController.java</url>
           <line>49</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Controller/LoginController.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Controller/DepositMoneyController.java</url>

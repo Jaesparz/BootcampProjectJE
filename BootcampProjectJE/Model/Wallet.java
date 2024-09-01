@@ -3,27 +3,27 @@ package Model;
 import java.math.BigDecimal;
 
 public class Wallet {
-    private double balance;
+    private static BigDecimal balance;
 
     public Wallet() {
-        this.balance = 0.0;
+        this.balance = BigDecimal.ZERO;
     }
 
-    public double getBalance() {
+    public static BigDecimal getBalance() {
         return balance;
     }
 
-    public void setBalance(double balance) {
-        this.balance = balance;
+    public static void setBalance(BigDecimal nuevoBalance) {
+        balance = nuevoBalance;
     }
 
-    public void deposit(double amount) {
-        balance += amount;
+    public static void deposit(BigDecimal amount) {
+        balance = balance.add(amount);
     }
 
-    public void withdraw(double amount) {
-        if (balance >= amount) {
-            balance -= amount;
+    public static void withdraw(BigDecimal amount) {
+        if (balance.compareTo(amount) >= 0) {
+            balance = balance.subtract(amount);
         } else {
             System.out.println("Insufficient funds");
         }

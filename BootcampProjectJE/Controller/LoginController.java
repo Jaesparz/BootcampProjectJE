@@ -1,9 +1,6 @@
 package Controller;
 
-import Model.InputValidator;
-import Model.NotANumberException;
-import Model.NotAWordException;
-import Model.User;
+import Model.*;
 import View.LoginMenuView;
 
 import java.util.ArrayList;
@@ -12,7 +9,6 @@ import java.util.Scanner;
 
 public class LoginController {
     public static Scanner scanner;
-    Comprador comprador = new Comprador();
     RegisterController registerController = new RegisterController(LoginController.scanner);
     List<User> registeredUsers = registerController.getRegisteredUsers();
 
@@ -49,8 +45,11 @@ public class LoginController {
 
                         LoginMenuView loginMenuView = new LoginMenuView();
                         Scanner scanner = new Scanner(System.in);
+                        Wallet wallet = new Wallet();
                         DepositMoneyController depositMoneyController = new DepositMoneyController(scanner);
                         ControllerCheckWallet controllerCheckWallet = new ControllerCheckWallet();
+                        PurchaseController purchaseController = new PurchaseController(scanner);
+
                         boolean salir = false;
 
                         while(!salir) {
@@ -74,19 +73,26 @@ public class LoginController {
                                 case 2:
                                     controllerCheckWallet.checkWallet();
 
-
                                     break;
                                 case 3:
-                                    System.out.println("Not Implemented yet");
+                                    purchaseController.placeBuyOrder();
+
                                     break;
                                 case 4:
                                     System.out.println("Not Implemented yet");
+
                                     break;
                                 case 5:
                                     System.out.println("Not Implemented yet");
+
+
                                     break;
                                 case 6:
-                                    System.out.println("Not Implemented yet");
+                                    System.out.println("Logging out...");
+                                    return;
+
+
+
 
 
                             }

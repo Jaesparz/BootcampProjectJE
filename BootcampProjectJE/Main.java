@@ -29,7 +29,6 @@ public class Main {
         while(!salir) {
             menu.FirstMenu();
             String userInput = scanner.next();
-
             int opcion;
             try {
                 InputValidator.validateNumberInput(userInput);
@@ -38,7 +37,6 @@ public class Main {
                 System.out.println("Error: You have to Enter a Number. Try Again.\n");
                 continue;
             }
-
             switch (opcion) {
                 case 1:
                     registerController.registerUser();
@@ -51,24 +49,10 @@ public class Main {
                     System.out.println("Closing app, Thank You");
                     salir = true;
             }
-
             scanner.nextLine();
         }
-
-        // To use when I have to need to get the list of RegisteredUsers
-
-        /*List<User> registeredUsers =  registerController.getRegisteredUsers();
-        for(User user : registeredUsers) {
-            System.out.println(user);
-        }*/
-
-
     }
-
-
     static {
         scanner = new Scanner(System.in);
     }
-
-
 }

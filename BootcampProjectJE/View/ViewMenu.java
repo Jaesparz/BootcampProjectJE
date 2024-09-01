@@ -10,7 +10,9 @@ public class ViewMenu {
     }
 
     public void FirstMenu() {
-        System.out.println("Welcome to the First Menu\n");
+
+        System.out.println("\n****Crypto Exchange System****\n");
+        System.out.println("\nWelcome to the First Menu\n");
         System.out.println("1. Register");
         System.out.println("2. Sign in");
         System.out.println("3. Exit\n");

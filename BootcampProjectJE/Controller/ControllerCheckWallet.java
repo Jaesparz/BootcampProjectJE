@@ -1,33 +1,30 @@
 package Controller;
 
+import Model.Bitcoin;
+import Model.CryptoCurrency;
+import Model.Ethereum;
 import Model.Wallet;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class ControllerCheckWallet {
 
-    private Scanner scanner;
+    private DepositMoneyController depositMoneyController;
     private Wallet wallet;
     private double amountMoney;
-    private double amountBitcoin;
-    private double amountEthereum;
+    private Bitcoin bitcoin;
+    private Ethereum ethereum;
+
+
     public ControllerCheckWallet() {
-        scanner = new Scanner(System.in);
-        wallet = new Wallet();
-        amountMoney = wallet.getBalance();
-        amountBitcoin = 0.0;
-        amountEthereum = 0.0;
 
     }
-
-
 
     public void checkWallet() {
-        System.out.println("Money: "+amountMoney);
-        System.out.println("Bitcoin: "+amountBitcoin);
-        System.out.println("Ethereum: "+amountEthereum);
 
-
+        System.out.println("Money: " + Wallet.getBalance());
+        System.out.println("Bitcoin: " + Bitcoin.getBitcoinBalance() );
+        System.out.println("Ethereum: " + Ethereum.getEthereumBalance()) ;
     }
-
 }
