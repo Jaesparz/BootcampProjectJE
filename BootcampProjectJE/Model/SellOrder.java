@@ -28,10 +28,11 @@ public class SellOrder {
 
     @Override
     public String toString() {
-        return "SellOrder{" +
+        return "[" +
                 "sellerName='" + sellerName + '\'' +
                 ", amount=" + amount +
                 ", totalPrice=" + totalPrice +
-                '}';
+                ']';
     }
+
 }

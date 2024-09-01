@@ -5,7 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ed24766-73f7-492c-b8c2-ccb7fae65431" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Files/BuyOrdersBitcoin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Files/BuyOrdersEthereum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/HistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/HistoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/PurchaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/PurchaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/SalesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/SalesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/SellOrdersBitcoin" beforeDir="false" afterPath="$PROJECT_DIR$/Files/SellOrdersBitcoin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/SellOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/SellOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/Controller/HistoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Controller/HistoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/Controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/Controller/PurchaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Controller/PurchaseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/Controller/SalesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Controller/SalesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/Files/SellOrdersBitcoin" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Files/SellOrdersBitcoin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/Model/SellOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Model/SellOrder.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +75,7 @@
     "Application.OrderBook.executor": "Run",
     "Application.SellersAndPurchasersLogic.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Purchase-Logic",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -162,7 +176,7 @@
       <workItem from="1724728715488" duration="9744000" />
       <workItem from="1724808983517" duration="20493000" />
       <workItem from="1724884392590" duration="353000" />
-      <workItem from="1725108630492" duration="23528000" />
+      <workItem from="1725108630492" duration="27578000" />
     </task>
     <servers />
   </component>

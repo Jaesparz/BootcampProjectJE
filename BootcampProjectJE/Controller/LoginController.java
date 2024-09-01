@@ -83,7 +83,7 @@ public class LoginController {
 
                                     break;
                                 case 5:
-                                    System.out.println("Not Implemented yet");
+                                    HistoryController.showHistory();
 
 
                                     break;

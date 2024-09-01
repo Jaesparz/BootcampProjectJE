@@ -84,6 +84,9 @@ public class PurchaseController {
 
                                 System.out.println("\nWe have deposited: " + amount + " BITCOINS INTO YOUR WALLET, CHECK IT!!! ");
 
+                                HistoryController.setComprasHechas(sellOrder);
+                                sellOrders.remove(sellOrder);
+
                                 break;
 
                             } else {
@@ -95,8 +98,7 @@ public class PurchaseController {
                             }
 
                         }
-                        else
-                            System.out.println("Insufficient funds");
+
                     }
                 } else {
                     System.out.println("Insufficient funds.");
@@ -153,7 +155,10 @@ public class PurchaseController {
                                 Bitcoin.deposit(amountE);
                                 System.out.println("\nSubstracting " + thisEthereumPriceinUsd + " From the Wallet\n");
 
-                                System.out.println("\nWe have deposited: " + amountE + " BITCOINS INTO YOUR WALLET, CHECK IT!!! ");
+                                System.out.println("\nWe have deposited: " + amountE + " ETHEREUM INTO YOUR WALLET, CHECK IT!!! ");
+                                HistoryController.setComprasHechas(sellOrder);
+                                sellOrdersE.remove(sellOrder);
+
 
                                 break;
 
