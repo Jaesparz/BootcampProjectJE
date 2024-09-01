@@ -5,43 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ed24766-73f7-492c-b8c2-ccb7fae65431" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Controller/HistoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/PlaceBuyOrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/PlaceSellOrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/PurchaseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SalesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Files/SellOrdersBitcoin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Files/SellOrdersEthereum" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/BuyOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/Exchanger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/OrderBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/SellOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/Comprador.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/ControllerCheckWallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/ControllerCheckWallet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/DepositMoneyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/DepositMoneyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Bitcoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Bitcoin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/CryptoCurrency.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/CryptoCurrency.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Ethereum.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Ethereum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/FiatMoney.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/FiatMoney.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Wallet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/LoginMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/LoginMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/ViewMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/ViewMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/Controller/Comprador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/Controller/ControllerCheckWallet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Controller/ControllerCheckWallet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/Controller/DepositMoneyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Controller/DepositMoneyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/Controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/Model/Bitcoin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Model/Bitcoin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/Model/CryptoCurrency.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Model/CryptoCurrency.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/Model/Ethereum.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Model/Ethereum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/Model/FiatMoney.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Model/FiatMoney.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/Model/Wallet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Model/Wallet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/View/LoginMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/View/LoginMenuView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/View/ViewMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/View/ViewMenu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +61,7 @@
     "Application.OrderBook.executor": "Run",
     "Application.SellersAndPurchasersLogic.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Purchase-Logic",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -198,7 +162,7 @@
       <workItem from="1724728715488" duration="9744000" />
       <workItem from="1724808983517" duration="20493000" />
       <workItem from="1724884392590" duration="353000" />
-      <workItem from="1725108630492" duration="22897000" />
+      <workItem from="1725108630492" duration="23528000" />
     </task>
     <servers />
   </component>
