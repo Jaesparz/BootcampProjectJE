@@ -1,0 +1,28 @@
+# Archivos y carpetas de configuración de IntelliJ
+.idea/
+*.iml
+
+# Archivos generados por IntelliJ
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# Archivos generados por Maven y Gradle
+/target/
+/.gradle/
+/build/
+
+# Archivos de compilación de Java
+/out/
+*.class
+
+# Archivos temporales y de entorno
+*.log
+*.env
+*.env.local
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
