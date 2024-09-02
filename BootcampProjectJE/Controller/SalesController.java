@@ -168,7 +168,7 @@ public class SalesController {
                                 System.out.println("Buy order executed successfully!");
 
                                 Wallet.deposit(thisEthereumPriceinUsd);
-                                Bitcoin.withdraw(amountE);
+                                Ethereum.withdraw(amountE);
 
                                 System.out.println("\nAdding " + thisEthereumPriceinUsd + " to  Wallet\n");
 

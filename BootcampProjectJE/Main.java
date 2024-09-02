@@ -2,11 +2,8 @@ import Controller.LoginController;
 import Controller.RegisterController;
 import Model.InputValidator;
 import Model.NotANumberException;
-import Model.User;
 import View.ViewMenu;
 import View.ViewRegistration;
-
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {

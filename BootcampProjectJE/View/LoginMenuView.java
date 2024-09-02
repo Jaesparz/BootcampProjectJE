@@ -10,10 +10,11 @@ public class LoginMenuView {
 
         System.out.println("1. Deposit Money");
         System.out.println("2. Check Wallet");
-        System.out.println("3. Place purchase Order");
-        System.out.println("4. Place sales Order");
-        System.out.println("5. View Transactions History");
-        System.out.println("6. Log out\n");
+        System.out.println("3. Buy Cryptocurrencies from the Exchange");
+        System.out.println("4. Place purchase Order");
+        System.out.println("5. Place sales Order");
+        System.out.println("6. View Transactions History");
+        System.out.println("7. Log out\n");
 
         System.out.println("Insert an option:");
     }

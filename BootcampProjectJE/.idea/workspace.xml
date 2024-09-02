@@ -5,14 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ed24766-73f7-492c-b8c2-ccb7fae65431" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Controller/CryptocurrenciesfromExchangeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/HistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/HistoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/PlaceBuyOrderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/PlaceSellOrderController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/PurchaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/PurchaseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/SalesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/SalesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/BuyOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/BuyOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/CryptoCurrency.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/CryptoCurrency.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/OrderBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/OrderBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Bitcoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Bitcoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Ethereum.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Ethereum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/LoginMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/LoginMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/Model/Bitcoin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Model/Bitcoin.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +174,8 @@
       <workItem from="1724808983517" duration="20493000" />
       <workItem from="1724884392590" duration="353000" />
       <workItem from="1725108630492" duration="28250000" />
-      <workItem from="1725199286838" duration="6111000" />
+      <workItem from="1725199286838" duration="8891000" />
+      <workItem from="1725239776701" duration="3632000" />
     </task>
     <servers />
   </component>
@@ -185,16 +190,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Controller/LoginController.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Controller/LoginController.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Controller/DepositMoneyController.java</url>
           <line>15</line>
@@ -204,6 +199,10 @@
           </properties>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="5" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

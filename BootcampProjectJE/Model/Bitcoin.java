@@ -4,7 +4,8 @@ import java.math.BigDecimal;
 
 public class Bitcoin extends CryptoCurrency {
     private static BigDecimal bitcoinPrice = BigDecimal.valueOf(58963.52);
-    private static BigDecimal bitcoinBalance = BigDecimal.valueOf(50);
+    private static BigDecimal bitcoinExchangerBalance = BigDecimal.valueOf(50);
+    private static BigDecimal bitcoinBalance = BigDecimal.valueOf(0);
 
     public Bitcoin(String name, BigDecimal amount) {
         super(name, amount);
@@ -26,11 +27,22 @@ public class Bitcoin extends CryptoCurrency {
         }
     }
 
+    public static void withdrawExchanger(BigDecimal amount) {
+        if (bitcoinExchangerBalance.compareTo(amount) >= 0) {
+            bitcoinExchangerBalance = bitcoinExchangerBalance.subtract(amount);
+        } else {
+            System.out.println("Insufficient Bitcoins");
+        }
+    }
+
     public static BigDecimal getBitcoinBalance() {   //ESTE ES LAS MONEDAS ACTUALES QUE SE TIENE
         return bitcoinBalance;
     }
     public static BigDecimal getBitcoinPrice() {    //pilas, este usalo para las conversiones y compra/venta Y PARA MOSTRAR EL PRECIO ESTANDAR DE LA MONEDA.
         return bitcoinPrice;
+    }
+    public static BigDecimal getBitcoinExchangerBalance() {
+        return bitcoinExchangerBalance;
     }
 
     public static void main(String[] args) {

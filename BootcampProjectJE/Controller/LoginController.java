@@ -48,6 +48,7 @@ public class LoginController {
                         Wallet wallet = new Wallet();
                         DepositMoneyController depositMoneyController = new DepositMoneyController(scanner);
                         ControllerCheckWallet controllerCheckWallet = new ControllerCheckWallet();
+                        CryptocurrenciesfromExchangeController cryptocurrenciesfromExchangeController = new CryptocurrenciesfromExchangeController(scanner);
                         PurchaseController purchaseController = new PurchaseController(scanner);
                         SalesController salesController = new SalesController(scanner);
 
@@ -76,21 +77,23 @@ public class LoginController {
 
                                     break;
                                 case 3:
-                                    purchaseController.placeBuyOrder();
+                                    cryptocurrenciesfromExchangeController.BuyCryptocurrenciesFromExchange();
 
                                     break;
                                 case 4:
+                                    purchaseController.placeBuyOrder();
+                                    break;
+                                case 5:
                                     salesController.placeSellOrder();
 
                                     break;
-                                case 5:
+                                case 6:
                                     HistoryController.showHistory();
 
-
-                                    break;
-                                case 6:
+                                case 7:
                                     System.out.println("Logging out...");
                                     return;
+
 
 
 
