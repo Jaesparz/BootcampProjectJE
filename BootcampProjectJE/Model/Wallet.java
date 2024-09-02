@@ -3,7 +3,7 @@ package Model;
 import java.math.BigDecimal;
 
 public class Wallet {
-    private static BigDecimal balance;
+    private static BigDecimal balance = new BigDecimal(0);
 
     public Wallet() {
         this.balance = BigDecimal.ZERO;

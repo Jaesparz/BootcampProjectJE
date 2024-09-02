@@ -1,10 +1,12 @@
 package Controller;
 
 import Model.*;
+import View.PurchaseView;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class PurchaseController {
@@ -15,185 +17,73 @@ public class PurchaseController {
 
     }
 
+    PurchaseView view = new PurchaseView(scanner);
+
     public void placeBuyOrder() {
-        System.out.println("Place Buy Order");
-        System.out.println("Select cryptocurrency to buy:");
-        System.out.println("1. Bitcoin");
-        System.out.println("2. Ethereum");
 
-        String choiceInput = scanner.nextLine();
-        int choice;
-
-        try {
-            InputValidator.validateNumberInput(choiceInput);
-            choice = Integer.parseInt(choiceInput);
-        } catch (NotANumberException e) {
-            System.out.println("Invalid input. Please enter a number.");
-            return;
+        int choice = view.selectCryptocurrency();
+        if (choice == 1) {
+            buyBitcoin();
+        } else if (choice == 2) {
+            buyEthereum();
         }
 
-        switch (choice) {
-            case 1:
-                System.out.println("Enter amount of Bitcoin to buy:");
-                String amountInput = scanner.nextLine();
-                BigDecimal amount;
 
-                try {
-                    InputValidator.validateNumberInput(amountInput);
-                    amount = new BigDecimal(amountInput);
+    }
+    private void buyBitcoin() {
+        BigDecimal amount = view.getAmountInput("Enter amount of Bitcoin to buy:");
+        BigDecimal maxPrice = view.getMaxPriceInput("Enter maximum price to pay per Bitcoin:");
+        ArrayList<SellOrder> sellOrders = OrderBook.getSellOrdersBitcoin();
 
-                    if (amount.compareTo(BigDecimal.ONE) < 0 || amount.compareTo(new BigDecimal("100")) > 0) {
-                        System.out.println("Invalid input. Please enter a number between 1 and 100.");
+        if (Wallet.getBalance().compareTo(Bitcoin.getBitcoinPrice().multiply(amount)) >= 0) {
+            Iterator<SellOrder> iterator = sellOrders.iterator();
+            while (iterator.hasNext()) {
+                SellOrder sellOrder = iterator.next();
+                if (sellOrder.getAmount().equals(amount) && Bitcoin.getBitcoinPrice().multiply(amount).compareTo(maxPrice) <= 0) {
+                    view.displayBuyOrderConfirmation(sellOrder);
+                    if (view.confirmPurchase()) {
+                        Wallet.withdraw(Bitcoin.getBitcoinPrice().multiply(amount));
+                        Bitcoin.deposit(amount);
+                        HistoryController.setComprasHechas(sellOrder);
+                        view.displayBuyOrderSuccessMessageB(amount);
+                        iterator.remove();
                         return;
                     }
-
-                } catch (NotANumberException e) {
-                    System.out.println("Invalid input. Please enter a number.");
-                    return;
                 }
-
-                System.out.println("Enter maximum price to pay per Bitcoin:");
-                String maxPriceInput = scanner.nextLine();
-                BigDecimal maxPrice;
-
-                try {
-                    InputValidator.validateNumberInput(maxPriceInput);
-                    maxPrice = new BigDecimal(maxPriceInput);
-                } catch (NotANumberException e) {
-                    System.out.println("Invalid input. Please enter a number.");
-                    return;
-                }
-                BigDecimal convertionMyMoneyToBitcoin = Wallet.getBalance().divide(Bitcoin.getBitcoinPrice(), RoundingMode.HALF_EVEN);
-                BigDecimal thisBitcoinPriceinUsd = Bitcoin.getBitcoinPrice().multiply(amount);
-                ArrayList<SellOrder> sellOrders = OrderBook.getSellOrdersBitcoin();
-
-                if (Wallet.getBalance().compareTo(thisBitcoinPriceinUsd) >= 0) {
-                    for (SellOrder sellOrder : sellOrders) {
-
-                        if (sellOrder.getAmount().equals(amount) && thisBitcoinPriceinUsd.compareTo(maxPrice) <= 0) {
-
-
-                            System.out.println("\nSearching for a Seller...........\n");
-                            try{
-                                Thread.sleep(5000);
-                            }catch(Exception e){
-                                e.printStackTrace();
-                            }
-
-                            System.out.println(sellOrder.getSellerName() + " is offering " + sellOrder.getAmount() + " for " + sellOrder.getTotalPrice());
-                            System.out.println("Do you confirm the purchase?  (YES/NO): ");
-                            String yesNo = scanner.nextLine();
-                            if (yesNo.equalsIgnoreCase("yes")) {
-                                System.out.println("Buy order executed successfully!");
-
-                                Wallet.withdraw(thisBitcoinPriceinUsd);
-                                Bitcoin.deposit(amount);
-                                System.out.println("\nSubstracting " + thisBitcoinPriceinUsd + " From the Wallet\n");
-
-                                System.out.println("\nWe have deposited: " + amount + " BITCOINS INTO YOUR WALLET, CHECK IT!!! ");
-
-                                HistoryController.setComprasHechas(sellOrder);
-                                sellOrders.remove(sellOrder);
-
-                                break;
-
-                            } else {
-                                System.out.println("Returning to loggin......");
-                                System.out.println("..........");
-                                System.out.println("..........");
-                                return;
-
-                            }
-
-                        }
-
-                    }
-                } else {
-                    System.out.println("Insufficient funds.");
-                }
-                break;
-
-
-            case 2:
-                System.out.println("Enter amount of Ethereum to buy:");
-                String amountInputE = scanner.nextLine();
-                BigDecimal amountE;
-
-                try {
-                    InputValidator.validateNumberInput(amountInputE);
-                    amountE = new BigDecimal(amountInputE);
-
-                    if (amountE.compareTo(BigDecimal.ONE) < 0 || amountE.compareTo(new BigDecimal("100")) > 0) {
-                        System.out.println("Invalid input. Please enter a number between 1 and 100.");
-                        return;
-                    }
-
-                } catch (NotANumberException e) {
-                    System.out.println("Invalid input. Please enter a number.");
-                    return;
-                }
-
-                System.out.println("Enter maximum price to pay per Ethereum:");
-                String maxPriceInputE = scanner.nextLine();
-                BigDecimal maxPriceE;
-
-                try {
-                    InputValidator.validateNumberInput(maxPriceInputE);
-                    maxPrice = new BigDecimal(maxPriceInputE);
-                } catch (NotANumberException e) {
-                    System.out.println("Invalid input. Please enter a number.");
-                    return;
-                }
-                BigDecimal convertionMyMoneyToEthereum = Wallet.getBalance().divide(Ethereum.getEthereumPrice(), RoundingMode.HALF_EVEN);
-                BigDecimal thisEthereumPriceinUsd = Ethereum.getEthereumPrice().multiply(amountE);
-                ArrayList<SellOrder> sellOrdersE = OrderBook.getSellOrdersEthereum();
-
-                if (Wallet.getBalance().compareTo(thisEthereumPriceinUsd) >= 0) {
-                    for (SellOrder sellOrder : sellOrdersE) {
-
-                        if (sellOrder.getAmount().equals(amountE) && thisEthereumPriceinUsd.compareTo(maxPrice) <= 0) {
-
-                            System.out.println("\nSearching for a Seller...........\n");
-                            try{
-                                Thread.sleep(5000);
-                            }catch(Exception e){
-                                e.printStackTrace();
-                            }
-
-                            System.out.println(sellOrder.getSellerName() + " is offering " + sellOrder.getAmount() + " for " + sellOrder.getTotalPrice());
-                            System.out.println("Do you confirm the purchase?  (YES/NO): ");
-                            String yesNo = scanner.nextLine();
-                            if (yesNo.equalsIgnoreCase("yes")) {
-                                System.out.println("Buy order executed successfully!");
-
-                                Wallet.withdraw(thisEthereumPriceinUsd);
-                                Ethereum.deposit(amountE);
-                                System.out.println("\nSubstracting " + thisEthereumPriceinUsd + " From the Wallet\n");
-
-                                System.out.println("\nWe have deposited: " + amountE + " ETHEREUM INTO YOUR WALLET, CHECK IT!!! ");
-                                HistoryController.setComprasHechas(sellOrder);
-                                sellOrdersE.remove(sellOrder);
-
-
-                                break;
-
-                            } else {
-                                System.out.println("Returning to loggin......");
-                                System.out.println("..........");
-                                System.out.println("..........");
-                                return;
-
-                            }
-                        }
-                    }
-                } else {
-                    System.out.println("Insufficient funds.");
-                }
-                break;
-
-
+            }
+        } else {
+            view.displayInsufficientFundsMessage();
         }
     }
+
+    private void buyEthereum() {
+        BigDecimal amount = view.getAmountInput("Enter amount of Ethereum to buy:");
+        BigDecimal maxPrice = view.getMaxPriceInput("Enter maximum price to pay per Ethereum:");
+        ArrayList<SellOrder> sellOrders = OrderBook.getSellOrdersEthereum();
+
+        if (Wallet.getBalance().compareTo(Ethereum.getEthereumPrice().multiply(amount)) >= 0) {
+            Iterator<SellOrder> iterator = sellOrders.iterator();
+            while (iterator.hasNext()) {
+                SellOrder sellOrder = iterator.next();
+
+                if (sellOrder.getAmount().equals(amount) && Ethereum.getEthereumPrice().multiply(amount).compareTo(maxPrice) <= 0) {
+                    view.displayBuyOrderConfirmation(sellOrder);
+                    if (view.confirmPurchase()) {
+                        Wallet.withdraw(Ethereum.getEthereumPrice().multiply(amount));
+                        Ethereum.deposit(amount);
+                        HistoryController.setComprasHechas(sellOrder);
+                        view.displayBuyOrderSuccessMessageE(amount);
+                        iterator.remove();
+                        return;
+                    }
+                }
+            }
+        } else {
+            view.displayInsufficientFundsMessage();
+        }
+    }
+
+
 }
 
 

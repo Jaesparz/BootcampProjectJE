@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class LoginController {
     public static Scanner scanner;
     RegisterController registerController = new RegisterController(LoginController.scanner);
-    List<User> registeredUsers = registerController.getRegisteredUsers();
+
 
     public LoginController(Scanner scanner) {
         this.scanner = scanner;
@@ -18,35 +18,24 @@ public class LoginController {
     }
 
     public void login() {
+
+        List<User> registeredUsers = registerController.getRegisteredUsers();
+        LoginMenuView view = new LoginMenuView(scanner);
         while (true) {
-            System.out.println("Enter email:");
-            String email = scanner.nextLine();
-            try {
-                InputValidator.validateWordInput(email);
-            } catch (NotAWordException e) {
-                System.out.println(e.getMessage());
-                continue;
-            }
+            String email = view.getEmailInput("Enter email:");
 
             boolean emailExists = false;
             for (User user : registeredUsers) {
                 if (user.getMail().equals(email)) {
                     emailExists = true;
-                    System.out.println("Enter password:");
-                    String password = scanner.nextLine();
-                    try {
-                        InputValidator.validateWordInput(password);
-                    } catch (NotAWordException e) {
-                        System.out.println(e.getMessage());
-                        continue;
-                    }
+
+                    String password = view.getPasswordInput("Enter password:");
+
                     if (user.getPassword().equals(password)) {
                         System.out.println("Login successful!");
 
-                        LoginMenuView loginMenuView = new LoginMenuView();
                         Scanner scanner = new Scanner(System.in);
-                        Wallet wallet = new Wallet();
-                        DepositMoneyController depositMoneyController = new DepositMoneyController(scanner);
+                        DepositMoneyController depositMoneyController = new DepositMoneyController();
                         ControllerCheckWallet controllerCheckWallet = new ControllerCheckWallet();
                         CryptocurrenciesfromExchangeController cryptocurrenciesfromExchangeController = new CryptocurrenciesfromExchangeController(scanner);
                         PurchaseController purchaseController = new PurchaseController(scanner);
@@ -55,22 +44,13 @@ public class LoginController {
                         boolean salir = false;
 
                         while(!salir) {
-                            loginMenuView.loginMenuView();
-                            String userInput = scanner.next();
+                            view.loginMenuView();
+                            int opcion = view.getOptionInput("Enter your choice: ");
 
-                            int opcion;
-                            try {
-                                InputValidator.validateNumberInput(userInput);
-                                opcion = Integer.parseInt(userInput);
-                            } catch (NotANumberException var10) {
-                                System.out.println("Error: You have to Enter a Number. Try Again.\n");
-                                continue;
-                            }
 
                             switch (opcion) {
                                 case 1:
                                     depositMoneyController.save();
-
                                     break;
                                 case 2:
                                     controllerCheckWallet.checkWallet();
@@ -90,32 +70,26 @@ public class LoginController {
                                 case 6:
                                     HistoryController.showHistory();
 
+                                    break;
+
                                 case 7:
-                                    System.out.println("Logging out...");
+                                    view.showLogoutMessage();
                                     return;
-
-
-
-
-
-
                             }
-
-                            scanner.nextLine();
                             continue;
                         }
                         return;
                     } else {
-                        System.out.println("ERROR");
-                        System.out.println("Please try again!");
+                        view.showError("ERROR");
+                        view.showError("Please try again");
                         continue;
                     }
                 }
             }
             if (!emailExists) {
-                System.out.println("Email does not exist");
-                System.out.println("ERROR");
-                System.out.println("Please try again!");
+                view.showError("Email does not exist");
+                view.showError("ERROR");
+                view.showError("Please try again");
                 continue;
             }
         }

@@ -1,26 +1,20 @@
 package Controller;
 
 import Model.Wallet;
+import View.DepositMoneyView;
 
 import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class DepositMoneyController {
-    private static Scanner scanner = new Scanner(System.in);
-
-
-    public DepositMoneyController(Scanner scanner) {
-        this.scanner = scanner;
-
-    }
+    private Scanner scanner = new Scanner(System.in);
 
     public void save() {
-        System.out.println("Enter the amount to deposit: ");
-        double amount = scanner.nextDouble();
-        BigDecimal amountDecimal = new BigDecimal(amount);
-        Wallet.deposit(amountDecimal);
 
-        System.out.println("Deposit successful! New balance: " + Wallet.getBalance());
+        DepositMoneyView view =  new DepositMoneyView(scanner);
+        BigDecimal amount = view.getAmountInput("Enter the amount to deposit: ");
+        Wallet.deposit(amount);
+        view.showSuccessMessage("Deposit successful! New balance: " + Wallet.getBalance());
     }
 
 }

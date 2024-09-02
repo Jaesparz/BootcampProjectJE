@@ -6,7 +6,7 @@ public class Ethereum extends CryptoCurrency {
 
     private static BigDecimal ethereumBalance = BigDecimal.valueOf(0);
     private static BigDecimal ethereumPrice = BigDecimal.valueOf(2542.80);
-    private static BigDecimal ethereumeExchangerBalance = BigDecimal.valueOf(300);
+
 
     public Ethereum(String name, BigDecimal amount) {
         super(name, amount);
@@ -26,13 +26,7 @@ public class Ethereum extends CryptoCurrency {
             System.out.println("Insufficient Bitcoins");
         }
     }
-    public static void withdrawExchanger(BigDecimal amount) {
-        if (ethereumeExchangerBalance.compareTo(amount) >= 0) {
-            ethereumeExchangerBalance = ethereumeExchangerBalance.subtract(amount);
-        } else {
-            System.out.println("Insufficient Bitcoins");
-        }
-    }
+
 
 
     public static BigDecimal getEthereumBalance() {    ///PARA MOSTRAR DEPOSITAT O QUITAR PUEDES USAR LAS VARIABLES DE UNA VEZ ;).
@@ -41,9 +35,7 @@ public class Ethereum extends CryptoCurrency {
     public  static BigDecimal getEthereumPrice() {        //pilas, este usalo para las conversiones y compra/venta
         return ethereumPrice;
     }
-    public  static BigDecimal getEthereumExchangerBalance() {
-        return ethereumeExchangerBalance;
-    }
+
 
 
 }
