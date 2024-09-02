@@ -2,6 +2,7 @@ package Controller;
 
 import Model.BuyOrder;
 import Model.SellOrder;
+import View.HistoryView;
 
 import java.util.ArrayList;
 
@@ -31,13 +32,10 @@ public class HistoryController {
     }
 
     public static void showHistory(){
-        System.out.println("TRANSACTIONS HISTORY: \n");
 
-        System.out.println("PURCHASES MADE BY YOU: \n");
-        HistoryController.getComprasHechas().forEach(System.out::println);
+        HistoryView view = new HistoryView();
+        view.showHistory();
 
-        System.out.println("\nSALES MADE BY YOU: \n");
-        HistoryController.getVentasHechas().forEach(System.out::println);
 
     }
 }

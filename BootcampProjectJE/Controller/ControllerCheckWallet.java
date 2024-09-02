@@ -4,17 +4,14 @@ import Model.Bitcoin;
 import Model.CryptoCurrency;
 import Model.Ethereum;
 import Model.Wallet;
+import View.CheckWalletView;
 
 import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class ControllerCheckWallet {
 
-    private DepositMoneyController depositMoneyController;
-    private Wallet wallet;
-    private double amountMoney;
-    private Bitcoin bitcoin;
-    private Ethereum ethereum;
+
 
 
     public ControllerCheckWallet() {
@@ -22,9 +19,11 @@ public class ControllerCheckWallet {
     }
 
     public void checkWallet() {
+        CheckWalletView view = new CheckWalletView();
 
-        System.out.println("Money: " + Wallet.getBalance());
-        System.out.println("Bitcoin: " + Bitcoin.getBitcoinBalance() );
-        System.out.println("Ethereum: " + Ethereum.getEthereumBalance()) ;
+        view.showWalletBalance(Wallet.getBalance());
+        view.showBitcoinBalance(Bitcoin.getBitcoinBalance());
+        view.showEthereumBalance(Ethereum.getEthereumBalance());
     }
 }
+

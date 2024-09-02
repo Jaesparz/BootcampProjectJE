@@ -4,6 +4,7 @@ package Controller;
 import Model.InputValidator;
 import Model.NotAWordException;
 import Model.User;
+import View.RegistrationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,53 +20,15 @@ public class RegisterController {
     }
 
     public void registerUser() {
-        while(true) {
-            System.out.println("Enter your name: ");
-            String name = this.scanner.nextLine();
+        RegistrationView view = new RegistrationView(scanner);
+        String name = view.getNameInput("Enter your name: ");
+        String email = view.getEmailInput("Enter your email: ");
+        String password = view.getPasswordInput("Enter your password: ");
 
-            NotAWordException e;
-            try {
-                InputValidator.validateWordInput(name);
-            } catch (NotAWordException var6) {
-                e = var6;
-                System.out.println("Invalid name: " + e.getMessage());
-                continue;
-            }
-
-            String email;
-            while(true) {
-                System.out.println("Enter your email: ");
-                email = this.scanner.nextLine();
-
-                try {
-                    InputValidator.validateWordInput(email);
-                    break;
-                } catch (NotAWordException var8) {
-                    e = var8;
-                    System.out.println("Invalid email: " + e.getMessage());
-                }
-            }
-
-            String password;
-            while(true) {
-                System.out.println("Enter your password: ");
-                password = this.scanner.nextLine();
-
-                try {
-                    InputValidator.validateWordInput(password);
-                    break;
-                } catch (NotAWordException var7) {
-                    e = var7;
-                    System.out.println("Invalid password: " + e.getMessage());
-                }
-            }
-
-            String username = this.generateRandomUsername(name);
-            User newUser = new User(name, email, password, username);
-            users.add(newUser);
-            System.out.println("Registration successful! Your username is: " + username);
-            return;
-        }
+        String username = generateRandomUsername(name);
+        User newUser = new User(name, email, password, username);
+        users.add(newUser);
+        view.showSuccessMessage("Registration successful! Your username is: " + username);
     }
 
     private String generateRandomUsername(String name) {
