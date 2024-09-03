@@ -1,4 +1,4 @@
-#CrytoExchangeSystem
+# Crypto Exchange System
 
 Cryptocurrencies are a modern and popular option for trading that is why this efficient and user-friendly program has been developed to allow the buying and selling of both bitcoin and ethereum, using fiat money.
 
